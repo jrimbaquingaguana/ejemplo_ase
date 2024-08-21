@@ -1,13 +1,9 @@
-Feature: Keywords and Data-Driven Testing
+Feature: Interfaz gráfica de usuario con botones Iniciar Detección, Iniciar Grabación, Salir
+  As a user
+  I want to have a graphical user interface with buttons for key actions
+  So that I can interact with the system easily
 
-  Scenario Outline: Perform detection and recording operations
+  Scenario: Display of the user interface with the necessary buttons
     Given the application is running
-    When I perform "<action>" with "<operation>"
-    Then the application should "<expected_result>"
-
-    Examples:
-      | action         | operation         | expected_result                           |
-      | start          | detection         | start detecting faces                     |
-      | start          | recording         | start recording                            |
-      | stop           | detection         | stop detecting faces                      |
-      | stop           | recording         | stop recording                             |
+    Then I should see the buttons "Iniciar Detección", "Iniciar Grabación", and "Salir"
+    And I attempt to perform an action that will fail

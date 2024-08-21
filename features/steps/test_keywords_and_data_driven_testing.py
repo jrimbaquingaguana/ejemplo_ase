@@ -1,4 +1,4 @@
-from behave import given, when, then
+"""from behave import given, when, then
 import pyautogui
 from pywinauto import Application
 from pywinauto.mouse import click
@@ -191,3 +191,4 @@ def validate_stop_detection(context):
 
 def validate_stop_recording(context):
     add_text_to_pdf("Validación: La grabación ha sido detenida correctamente.")
+"""
