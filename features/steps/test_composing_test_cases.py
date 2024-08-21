@@ -1,4 +1,4 @@
-"""from behave import given, when, then
+from behave import given, when, then
 import pyautogui
 from pywinauto import Application
 from pywinauto.mouse import click
@@ -62,7 +62,7 @@ def close_pdf():
 def step_given_application_running(context):
     global process, app, window, buttons
     print("Iniciando la aplicación...")
-    process = subprocess.Popen(["python", "C:\\Users\\yanac\\OneDrive\\Escritorio\\DOCUMENTOS DE 6TO SEMESTRE\\APLICACIONES BASADAS EN EL CONOCIMIENTO\\ASEGURAMIENTO\\movimiento_mouse.py"])
+    process = subprocess.Popen(["python", "C:\\Users\\richa\\Desktop\\ASEGURAMIENTO\\movimiento_mouse.py"])
     time.sleep(5)
     print("Aplicación iniciada.")
 
@@ -190,4 +190,3 @@ def validate_stop_detection(context):
 def validate_stop_recording(context):
     # Implementar lógica para validar si la grabación ha detenido
     add_text_to_pdf("Validación: La aplicación ha dejado de grabar. [Pass]")
-"""

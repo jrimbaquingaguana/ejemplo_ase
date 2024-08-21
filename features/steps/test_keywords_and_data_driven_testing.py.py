@@ -1,4 +1,4 @@
-import os
+"""import os
 import json
 from datetime import datetime
 from behave import given, when, then
@@ -244,4 +244,4 @@ def step_then_generate_report(context):
         print("Cerrando la aplicación...")
         process.terminate()
         print("Aplicación cerrada.")
-        close_pdf()
+        close_pdf() """

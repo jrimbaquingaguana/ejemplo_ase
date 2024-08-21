@@ -1,10 +1,17 @@
 Feature: Interfaz gráfica de usuario con botones Iniciar Detección, Iniciar Grabación, Salir
 
-  As a user
-  I want to have a graphical user interface with buttons for key actions
-  So that I can interact with the system easily
-
-  Scenario: Display of the user interface with the necessary buttons
+  Background:
     Given the application is running
-    When I attempt to start video capture with an intentional error
-    Then a report with screenshots and video should be generated
+
+  Scenario: Iniciar y detener la detección y grabación
+    When I start detection
+    Then the application should start detecting faces
+
+    When I start recording
+    Then the application should start recording
+
+    When I stop detection
+    Then the application should stop detecting faces
+
+    When I stop recording
+    Then the application should stop recording
