@@ -1,4 +1,4 @@
-from behave import given, when, then
+"""from behave import given, when, then
 import subprocess
 import time
 from datetime import datetime
@@ -148,3 +148,4 @@ def step_then_stop_recording(context):
         process.terminate()
         print("Aplicación cerrada.")
         close_pdf()
+"""
