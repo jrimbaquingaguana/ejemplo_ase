@@ -1,17 +1,8 @@
-Feature: Interfaz gráfica de usuario con botones Iniciar Detección, Iniciar Grabación, Salir
+Feature: Control del cursor del mouse con el ojo derecho
 
   Background:
     Given the application is running
 
-  Scenario: Iniciar y detener la detección y grabación
-    When I start detection
-    Then the application should start detecting faces
-
-    When I start recording
-    Then the application should start recording
-
-    When I stop detection
-    Then the application should stop detecting faces
-
-    When I stop recording
-    Then the application should stop recording
+  Scenario: Controlar el cursor del mouse con el ojo derecho
+    When I move my right eye
+    Then the cursor should move accordingly on the screen

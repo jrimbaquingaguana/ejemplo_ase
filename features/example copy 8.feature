@@ -1,17 +1,10 @@
-Feature: Interfaz gráfica de usuario con botones Iniciar Detección, Iniciar Grabación, Salir
+Feature: Superposición de puntos de referencia faciales
 
   Background:
     Given the application is running
 
-  Scenario: Iniciar y detener la detección y grabación
-    When I start detection
-    Then the application should start detecting faces
-
-    When I start recording
-    Then the application should start recording
-
-    When I stop detection
-    Then the application should stop detecting faces
-
-    When I stop recording
-    Then the application should stop recording
+  Scenario: Superponer puntos de referencia faciales en el video
+    When I start face detection with landmarks
+    Then the application should overlay facial landmarks on detected faces
+    When I stop face detection with landmarks
+    Then the facial landmarks overlay should stop

@@ -1,17 +1,10 @@
-Feature: Interfaz gráfica de usuario con botones Iniciar Detección, Iniciar Grabación, Salir
+Feature: Detección automática de rostros en el video
 
   Background:
     Given the application is running
 
-  Scenario: Iniciar y detener la detección y grabación
-    When I start detection
-    Then the application should start detecting faces
-
-    When I start recording
-    Then the application should start recording
-
-    When I stop detection
-    Then the application should stop detecting faces
-
-    When I stop recording
-    Then the application should stop recording
+  Scenario: Detectar rostros automáticamente en el video
+    When I start face detection
+    Then the application should detect faces in the video feed
+    When I stop face detection
+    Then the face detection should stop
