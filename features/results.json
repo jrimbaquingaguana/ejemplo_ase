@@ -1,0 +1,63 @@
+[
+{
+  "elements": [
+    {
+      "keyword": "Scenario",
+      "location": "example.feature:3",
+      "name": "Start recording and detection",
+      "status": "failed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "example.feature:4",
+          "match": {
+            "arguments": [],
+            "location": "steps/test_keywords_and_data_driven_testing.py:70"
+          },
+          "name": "the application is running",
+          "result": {
+            "duration": 35.03906559944153,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "example.feature:5",
+          "name": "I start recording",
+          "result": {
+            "duration": 0,
+            "status": "undefined"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "example.feature:6",
+          "name": "I start detection",
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "example.feature:7",
+          "name": "I stop recording",
+          "step_type": "then"
+        },
+        {
+          "keyword": "And",
+          "location": "example.feature:8",
+          "name": "I stop detection",
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    }
+  ],
+  "keyword": "Feature",
+  "location": "example.feature:1",
+  "name": "Recording and Detection Operations",
+  "status": "failed",
+  "tags": []
+}
+]

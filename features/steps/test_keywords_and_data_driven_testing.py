@@ -17,7 +17,6 @@ window = None
 buttons = None
 current_y = 750  # Coordenada Y inicial para el texto
 image_height = 300  # Altura de la imagen en el PDF
-c = None  # Canvas global
 
 # Crear un nuevo directorio 'reports' para cada ejecución
 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -25,6 +24,7 @@ report_dir = f"reports_{timestamp}"
 os.makedirs(report_dir, exist_ok=True)
 
 pdf_path = os.path.join(report_dir, f"test_report_{timestamp}.pdf")
+c = None  # Canvas global
 
 def create_pdf_file(file_name):
     global c
@@ -39,33 +39,24 @@ def capture_screenshot(file_name):
 
 def add_text_to_pdf(text):
     global c, current_y
-    if c:
-        c.drawString(100, current_y, text)
-        current_y -= 20
-        if current_y < 50:
-            c.showPage()
-            current_y = 750
-    else:
-        print("Error: El canvas no está inicializado.")
+    c.drawString(100, current_y, text)
+    current_y -= 20
+    if current_y < 50:
+        c.showPage()
+        current_y = 750
 
 def add_screenshot_to_pdf(image_path):
     global c, current_y
-    if c:
-        if current_y < image_height + 50:
-            c.showPage()
-            current_y = 750
-        c.drawImage(image_path, 10, current_y - image_height, 500, image_height)
-        current_y -= image_height + 20
-    else:
-        print("Error: El canvas no está inicializado.")
+    if current_y < image_height + 50:
+        c.showPage()
+        current_y = 750
+    c.drawImage(image_path, 10, current_y - image_height, 500, image_height)
+    current_y -= image_height + 20
 
 def close_pdf():
     global c
-    if c:
-        c.save()
-        print(f"PDF {pdf_path} cerrado.")
-    else:
-        print("Error: El canvas no está inicializado.")
+    c.save()
+    print(f"PDF {pdf_path} cerrado.")
 
 @given('the application is running')
 def step_given_application_running(context):
@@ -184,8 +175,7 @@ def stop_recording(context):
         print(f"Error al intentar detener la grabación: {e}")
     finally:
         print("Cerrando la aplicación...")
-        if process:
-            process.terminate()
+        process.terminate()
         print("Aplicación cerrada.")
         close_pdf()
 
