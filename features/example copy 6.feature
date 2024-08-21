@@ -1,10 +1,10 @@
-Feature: Detección automática de rostros en el video
+Feature: Captura de video en tiempo real
 
   Background:
     Given the application is running
 
-  Scenario: Detectar rostros automáticamente en el video
-    When I start face detection
-    Then the application should detect faces in the video feed
-    When I stop face detection
-    Then the face detection should stop
+  Scenario: Capturar video en tiempo real
+    When I start real-time video capture
+    Then the application should capture video in real-time
+    When I stop real-time video capture
+    Then the video should be saved successfully
